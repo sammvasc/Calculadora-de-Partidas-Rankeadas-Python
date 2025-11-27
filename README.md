@@ -1,38 +1,56 @@
-Calculadora de Partidas Rankeadas — Python
+# Calculadora de Partidas Rankeadas — Python
 
-Este projeto foi desenvolvido como parte do desafio da DIO, utilizando conceitos fundamentais de programação: variáveis, operadores, funções, condicionais e loops.
+Projeto desenvolvido para o desafio da **DIO**, aplicando lógica de programação com variáveis, funções, condicionais e cálculo de classificação de jogadores.
 
-A aplicação calcula o saldo de vitórias de um jogador e determina seu nível ranqueado conforme a tabela proposta no desafio.
+---
 
-Objetivo
+## Sobre o projeto
 
-Criar uma função que recebe a quantidade de vitórias e derrotas, calcula o saldo e classifica o jogador em um nível:
+O programa solicita ao usuário o número de **vitórias** e **derrotas**, calcula o **saldo de partidas** e determina o **nível ranqueado** conforme as regras do desafio.
 
-Vitórias	Nível
-< 10	Ferro
-11–20	Bronze
-21–50	Prata
-51–80	Ouro
-81–90	Diamante
-91–100	Lendário
-≥ 101	Imortal
-Como executar o projeto
+A classificação segue a seguinte lógica:
 
-Certifique-se de ter o Python 3 instalado.
+| Vitórias | Nível |
+|---------|--------|
+| < 10 | Ferro |
+| 11–20 | Bronze |
+| 21–50 | Prata |
+| 51–80 | Ouro |
+| 81–90 | Diamante |
+| 91–100 | Lendário |
+| ≥ 101 | Imortal |
 
-No terminal, navegue até a pasta do projeto:
+---
 
-cd nome-do-projeto
+## Tecnologias utilizadas
 
+- Python 3
+- Lógica de programação
+- Funções
+- Estruturas condicionais
 
-Execute o arquivo principal:
+---
 
-python src/classificador.py
+## Como executar o projeto
 
-Código utilizado
+1. Certifique-se de ter o **Python 3** instalado.
+2. Abra o terminal e navegue até a pasta do projeto:
+   ```bash
+   cd nome-do-repositorio
+   ```
+3. Execute o arquivo principal:
+   ```bash
+   python src/classificador.py
+   ```
+
+---
+
+## Código utilizado
+
+```python
 def calcular_nivel(vitorias, derrotas):
     saldo = vitorias - derrotas
-    
+
     if vitorias < 10:
         nivel = "Ferro"
     elif 11 <= vitorias <= 20:
@@ -47,7 +65,7 @@ def calcular_nivel(vitorias, derrotas):
         nivel = "Lendário"
     else:
         nivel = "Imortal"
-    
+
     return saldo, nivel
 
 
@@ -57,8 +75,8 @@ derrotas = int(input("Digite o número de derrotas: "))
 saldo, nivel = calcular_nivel(vitorias, derrotas)
 
 print(f"O Herói tem de saldo de {saldo} está no nível de {nivel}.")
+```
 
+## Exemplo de saída
 
-Ao final da execução, aparece uma mensagem como:
-
-O Herói tem de saldo de 15 está no nível de Prata.
+> O Herói tem de saldo de **15** está no nível de **Prata**.
